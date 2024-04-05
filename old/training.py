@@ -42,3 +42,27 @@ predictionsHA = modelHA.predict(X_test)
 # Vorhersage mit dem Modell HA
 predictionsGA = modelGA.predict(X_test)
 
+#Speichern mit pickle
+import pickle
+model_ha_path = 'modelHA.pkl'
+model_ga_path = 'modelGA.pkl'
+
+# Speichere das Halbtax-Modell
+with open(model_ha_path, 'wb') as file:
+    pickle.dump(modelHA, file)
+    
+# Speichere das GA-Modell
+with open(model_ga_path, 'wb') as file:
+    pickle.dump(modelGA, file)
+
+print("Modelle wurden erfolgreich gespeichert.")
+
+# Lade das Halbtax-Modell
+with open('modelHA.pkl', 'rb') as file:
+    modelHA_loaded = pickle.load(file)
+    
+# Lade das GA-Modell
+with open('modelGA.pkl', 'rb') as file:
+    modelGA_loaded = pickle.load(file)
+
+print("Modelle wurden erfolgreich geladen.")

@@ -1,4 +1,4 @@
-name: Scrape Data, build and upload Model
+name: SBB Project Get Data, build and upload Model
 
 on:
   push:

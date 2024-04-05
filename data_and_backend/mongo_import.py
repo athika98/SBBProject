@@ -2,19 +2,19 @@
 import pandas as pd
 from pymongo import MongoClient
 import getsbbdata as apiConnector
-from mongo_user import cosmos_url, cosmos_db_name
+from mongo_user import MONGODB_URI, MONGODB_DB_NAME
 #### Imports ####
 
 # MongoDB-Client initialisieren und Datenverbindung herstellen
 
-client = MongoClient(cosmos_url)
-db = client[cosmos_db_name]
+client = MongoClient(MONGODB_URI)
+db = client[MONGODB_DB_NAME]
 
 # Funktion zum Einfügen von SBB-Daten in MongoDB
 def insertSbbDataIntoMongo():
 
     # Datenbank und Sammlung definieren
-    db = client[cosmos_db_name]
+    db = client[MONGODB_DB_NAME]
     collection = db['sbbdaten']
 
     # Datenframe von der API abrufen

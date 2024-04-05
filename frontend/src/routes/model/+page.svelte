@@ -1,11 +1,11 @@
 <script>
-    import { writable } from 'svelte/store';
+    import { writable } from "svelte/store";
     // Erstelle die reaktiven Variablen
-    const plz = writable('');
-    const einwohnerzahl = writable('');
+    const plz = writable("");
+    const einwohnerzahl = writable("");
 
     // Erstelle eine reaktive Variable für die Vorhersageergebnisse
-    let vorhersageErgebnis = '';
+    let vorhersageErgebnis = "";
 
     // Funktion zum Senden der Daten und Empfangen der Vorhersage vom Backend
     async function handleSubmit() {
@@ -15,16 +15,18 @@
         };
 
         try {
-            const response = await fetch('http://localhost:5000/predict', {
-                method: 'POST',
+            const response = await fetch("http://localhost:5000/predict", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json'
+                    "Content-Type": "application/json",
                 },
-                body: JSON.stringify(payload)
+                body: JSON.stringify(payload),
             });
 
             if (!response.ok) {
-                throw new Error(`Fehler beim Senden der Anfrage - HTTP-Fehler: Status ${response.status}`);
+                throw new Error(
+                    `Fehler beim Senden der Anfrage - HTTP-Fehler: Status ${response.status}`,
+                );
             }
 
             const result = await response.json();
@@ -59,37 +61,56 @@
         <div class="row">
             <div class="col-4 align-self-start">
                 <div class="mb-3">
-                    <label for="plz" class="form-label">Postleitzahl eingeben</label>
+                    <label for="plz" class="form-label"
+                        >Postleitzahl eingeben</label
+                    >
                 </div>
             </div>
             <div class="col-4 align-self-start">
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="plz" placeholder="8004" bind:value={$plz}/>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="plz"
+                        placeholder="8004"
+                        bind:value={$plz}
+                    />
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-4 align-self-start">
                 <div class="mb-3">
-                    <label for="einwohnerzahl" class="form-label">Anzahl Einwohner eingeben</label>
+                    <label for="einwohnerzahl" class="form-label"
+                        >Anzahl Einwohner eingeben</label
+                    >
                 </div>
             </div>
             <div class="col-4 align-self-start">
                 <div class="mb-3">
-                    <input type="text" class="form-control" id="einwohnerzahl" placeholder="10000" bind:value={$einwohnerzahl}/>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="einwohnerzahl"
+                        placeholder="10000"
+                        bind:value={$einwohnerzahl}
+                    />
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-4 align-self-start">
-            <div class="mb-3">
-            </div>
+            <div class="mb-3"></div>
         </div>
         <div class="col-4 align-self-start">
             <div class="mb-3">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button on:click={handleSubmit} type="button" class="btn button-calculate">Berechnen</button>
+                    <button
+                        on:click={handleSubmit}
+                        type="button"
+                        class="btn button-calculate">Berechnen</button
+                    >
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 #### Imports ####
 import matplotlib.pyplot as plt
-from training import X_test, y_test, z_test, predictionsGA, predictionsHA
+from model import X_test, y_test, z_test, predictionsGA, predictionsHA
 import os
 #### Imports ####
 

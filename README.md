@@ -1,9 +1,8 @@
-# HikePlanner
+# SBB Project
 
-inspired by https://blog.mimacom.com/data-collection-scrapy-hiketime-prediction/
-similar dataset https://www.kaggle.com/datasets/roccoli/gpx-hike-tracks
+inspired by https://github.com/mosazhaw/HikePlanner
 
-## Spider
+## Data and Backend
 
 * Scrape regularly for new / additional data
 * Output file.jl (json list)
@@ -39,8 +38,3 @@ similar dataset https://www.kaggle.com/datasets/roccoli/gpx-hike-tracks
 * Copy Frontend (prebuilt, TODO Build)
 * Azure Blob Storage: Zugriffsschlüssel als Umgebungsvariable
 
-## Ideas
-
-* Personalized Model
-    * For a specific Hikr user
-    * z.B. 100 weitere "neue" Daten eines bestimmten Benutzers 

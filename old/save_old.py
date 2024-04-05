@@ -1,5 +1,5 @@
-# cd model
-# python save.py -c '***AZURE_STORAGE_CONNECTION_STRING***'
+# cd data_and_backend
+# Ausführen mit python save.py -c "DefaultEndpointsProtocol=https;AccountName=sbbproject;AccountKey=****;EndpointSuffix=core.windows.net"
 
 import os, uuid
 from azure.identity import DefaultAzureCredential
@@ -53,7 +53,7 @@ try:
         # Create the container
         container_client = blob_service_client.create_container(container_name)
 
-    local_file_name = "GradientBoostingRegressor.pkl"
+    local_file_name = "modelGA.pkl"
     upload_file_path = os.path.join(".", local_file_name)
 
     # Create a blob client using the local file name as the name for the blob

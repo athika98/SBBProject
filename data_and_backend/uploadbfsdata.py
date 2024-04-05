@@ -1,19 +1,19 @@
 #### Imports ####
 import pandas as pd
 from pymongo import MongoClient
-from mongo_user import cosmos_url, cosmos_db_name
+from mongo_user import MONGODB_URI, MONGODB_DB_NAME
 #### Imports ####
 
 # Cosmos DB Verbindungsdaten
-cosmos_collection_name = 'bfsdaten'
+MONGODB_COLLECTION_NAME = 'bfsdaten'
 
 # CSV-Dateipfad
-csv_file_path = 'getbfsdata/BFS_Stats_bereinigt.csv'
+csv_file_path = '01_getbfsdata/BFS_Stats_bereinigt.csv'
 
 # Verbindung zu Cosmos DB herstellen
-client = MongoClient(cosmos_url)
-db = client[cosmos_db_name]
-collection = db[cosmos_collection_name]
+client = MongoClient(MONGODB_URI)
+db = client[MONGODB_DB_NAME]
+collection = db[MONGODB_COLLECTION_NAME]
 
 # CSV-Datei lesen
 data = pd.read_csv(csv_file_path, delimiter=';')

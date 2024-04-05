@@ -4,6 +4,7 @@ from training import modelGA, modelHA
 #### Imports ####
 
 def vorhersage(plz, bevoelkerungsgroesse):
+
     # Vorverarbeitung der Eingaben
     input_data = pd.DataFrame({'Total_Einwohner': [bevoelkerungsgroesse]})
     
@@ -16,6 +17,7 @@ def vorhersage(plz, bevoelkerungsgroesse):
     # print(f"Anzahl GA-Abonnements: {ga_vorhersage}")
 
     return ga_vorhersage, halbtax_vorhersage
+
 
 # Testaufruf der Funktion
 # vorhersage(8004, 100000)

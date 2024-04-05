@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # SBB Project
+=======
+# SBB Project Python
+>>>>>>> 02be2c2bc69dc8b8490a27039697a78b827581b5
 
 inspired by https://github.com/mosazhaw/HikePlanner
 

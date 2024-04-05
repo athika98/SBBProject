@@ -7,6 +7,10 @@ from model import vorhersage
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def home():
+    return 'Hello, this is the home page of the Flask backend.'
+
 @app.route('/predict', methods=['POST'])
 def predict():
     # Daten aus der Anfrage extrahieren

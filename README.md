@@ -1,21 +1,13 @@
-<<<<<<< HEAD
 # SBB Project
-=======
-# SBB Project Python
->>>>>>> 02be2c2bc69dc8b8490a27039697a78b827581b5
 
 inspired by https://github.com/mosazhaw/HikePlanner
 
-## Data and Backend
-
-* Scrape regularly for new / additional data
-* Output file.jl (json list)
+## Backend
+* Scrape SBB data via API 
+* BFS Data csv
 * Load data into MongoDB
 * Update model
-    * Produce correlation heatmap
-    * Check R2 (bigger and close to 1 is better)
-    * Check MSE (lower better, square seconds)
-* Save model to model/GradientBoostingRegressor.pkl
+* Save model to backend/modelGA.pkl and backend/modelHA.pkl
 
 ## Azure Blob Storage
 
@@ -26,13 +18,12 @@ inspired by https://github.com/mosazhaw/HikePlanner
     * Als Secret für GitHub
 
 ## GitHub Action
-
 * Scrape
 * Load data to MongoDB (Azure Cosmos DB)
 * Update model and save to Azure Blob Storage
 
 ## App
-* Backend: Python Flask (backend/service.py)
+* Backend: Python Flask (backend/backend.py)
 * Frontend: SvelteKit (build still manually)
 
 ## Deployment with Docker

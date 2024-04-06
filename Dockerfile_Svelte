@@ -1,9 +1,12 @@
+# Usage: docker-compose build
+# docker login mit user und token
+
 FROM node:20 AS frontend
 
-# Setze das Arbeitsverzeichnis im Container
+# Setze das Arbeitsverzeichnis im Container 
 WORKDIR /usr/src/app/frontend
 
-# Erforderliche Dateien kopieren (z.B. package.json, package-lock.json)
+# Erforderliche Dateien kopieren
 COPY frontend/package*.json ./
 
 # Abhängigkeiten installieren

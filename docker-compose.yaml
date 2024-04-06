@@ -1,19 +1,19 @@
 version: '3'
 services:
-  flask:
+  flask: # Docker-Dienst für Flask-Anwendung
     build:
       context: .
       dockerfile: Dockerfile_Flask
-    image: athika98/sbbproject:flask  # Das Image für den Flask-Dienst
+    image: athika98/sbbproject:flask  # Das Image nur für den Flask-Dienst
     ports:
       - "5001:5001"
     restart: always
 
-  svelte:
+  svelte: # Docker-Dienst für Svelte-Anwendung
     build:
       context: .
       dockerfile: Dockerfile_Svelte
-    image: athika98/sbbproject:svelte  # Das Image für den Svelte-Dienst
+    image: athika98/sbbproject:svelte  # Das Image nur für den Svelte-Dienst
     ports:
       - "4173:4173"
     restart: always

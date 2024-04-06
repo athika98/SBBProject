@@ -1,10 +1,14 @@
 #### Imports ####
 import pandas as pd
 from pymongo import MongoClient
-from mongo_user import MONGODB_URI, MONGODB_DB_NAME
+import os
 #### Imports ####
 
-# Cosmos DB Verbindungsdaten
+# Zugriff auf die Umgebungsvariablen
+MONGODB_URI = os.getenv('MONGODB_URI')
+MONGODB_DB_NAME = os.getenv('MONGODB_DB_NAME')
+
+# DB Verbindungsdaten
 MONGODB_COLLECTION_NAME = 'bfsdaten'
 
 # CSV-Dateipfad

@@ -2,11 +2,14 @@
 import pandas as pd
 from pymongo import MongoClient
 import getsbbdata as apiConnector
-from mongo_user import MONGODB_URI, MONGODB_DB_NAME
+import os
 #### Imports ####
 
-# MongoDB-Client initialisieren und Datenverbindung herstellen
+# Zugriff auf die Umgebungsvariablen
+MONGODB_URI = os.getenv('MONGODB_URI')
+MONGODB_DB_NAME = os.getenv('MONGODB_DB_NAME')
 
+# MongoDB-Client initialisieren und Datenverbindung herstellen
 client = MongoClient(MONGODB_URI)
 db = client[MONGODB_DB_NAME]
 

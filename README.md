@@ -4,13 +4,13 @@ inspired by https://github.com/mosazhaw/HikePlanner
 
 ## Backend
 * Scrape SBB data via API 
-* BFS Data csv
+* BFS Data CSV files
 * Load data into MongoDB
 * Update model
 * Save model to backend/modelGA.pkl and backend/modelHA.pkl
+* Create graph.py for training data
 
 ## Azure Blob Storage
-
 * Save model to Azure Blob Storage
 * Always save new version of model
 * Zugriff: Speicherkonto > Zugriffsschlüssel
@@ -18,7 +18,6 @@ inspired by https://github.com/mosazhaw/HikePlanner
     * Als Secret für GitHub
 
 ## GitHub Action
-* Scrape
 * Load data to MongoDB (Azure Cosmos DB)
 * Update model and save to Azure Blob Storage
 

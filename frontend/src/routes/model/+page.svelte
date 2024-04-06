@@ -6,6 +6,8 @@
 
     // Erstelle eine reaktive Variable für die Vorhersageergebnisse
     let vorhersageErgebnis = "";
+    let vorhersageErgebnisGA = "";
+    let vorhersageErgebnisHA = "";
 
     // Funktion zum Senden der Daten und Empfangen der Vorhersage vom Backend
     async function handleSubmit() {
@@ -30,7 +32,9 @@
             }
 
             const result = await response.json();
-            vorhersageErgebnis = `Die Vorhersage für die Postleitzahl ist wie folgt - GA-Abonnements: ${result.GA}, Halbtax-Abonnements: ${result.Halbtax}.`;
+            vorhersageErgebnisGA = `${result.GA}`;
+            vorhersageErgebnisHA = `${result.Halbtax}`;
+
         } catch (error) {
             vorhersageErgebnis = `Fehler bei der Anfrage: ${error.message}`;
         }
@@ -38,26 +42,11 @@
 </script>
 
 <div class="container-fluid">
-    <h2>Anzahl GA und HA in einem Gebiet berechnen</h2>
+    <h4>Vorhersage der Anzahl von GA und HA in einem Gebiet</h4>
+    <br />
+    <h5>Eingabe der Daten</h5>
     <br />
     <div class="container-fluid custom-container">
-        <!--div class="row">
-            <div class="col-4 align-self-start">
-                <div class="mb-3">
-                    <label for="gaorha" class="form-label"> Was möchtest du berechnen?</label>
-                </div>
-            </div>
-            <div class="col-4 align-self-start">
-                <div class="mb-3">
-                    <select class="form-select" bind:value={$auswahl}>
-                        <option selected>Wählen</option>
-                        <option value="GA">GA</option>
-                        <option value="Halbtax">Halbtax</option>
-                        <option value="Beide">Beides</option>
-                    </select>
-                </div>
-            </div>
-        </div-->
         <div class="row">
             <div class="col-4 align-self-start">
                 <div class="mb-3">
@@ -115,9 +104,11 @@
             </div>
         </div>
     </div>
-
-    <h3>Vorhersage</h3>
-    <p>{vorhersageErgebnis}</p>
+    <br />
+    <h5>Vorhersage</h5>
+    <p>Die Prognose für die Postleitzahl lautet:</p>
+    <p>- GA Abonnements: {vorhersageErgebnisGA}</p>
+    <p>- Halbtax Abonnements: {vorhersageErgebnisHA}</p>
 </div>
 
 <style>
@@ -129,7 +120,7 @@
         padding-right: 0 !important;
     }
     .button-calculate {
-        background-color: MistyRose;
-        border-color: lightpink;
+        background-color: rgb(255, 80, 80);
+        border-color: rgb(235 0 0);
     }
 </style>

@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_Flask
+    image: athika98/sbbproject:flask  # Das Image für den Flask-Dienst
     ports:
       - "5001:5001"
     restart: always
@@ -12,6 +13,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_Svelte
+    image: athika98/sbbproject:svelte  # Das Image für den Svelte-Dienst
     ports:
       - "4173:4173"
     restart: always

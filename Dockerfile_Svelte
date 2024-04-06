@@ -1,0 +1,22 @@
+FROM node:20 AS frontend
+
+# Setze das Arbeitsverzeichnis im Container
+WORKDIR /usr/src/app/frontend
+
+# Erforderliche Dateien kopieren (z.B. package.json, package-lock.json)
+COPY frontend/package*.json ./
+
+# Abhängigkeiten installieren
+RUN npm install
+
+# Kopiere das Frontend-Verzeichnis in den Container
+COPY frontend/ .
+
+# Anwendung bauen
+RUN npm run build
+
+# EXPO
+EXPOSE 4173
+
+# Anwendung starten
+CMD ["npm","run", "preview","--", "--host", "0.0.0.0"]

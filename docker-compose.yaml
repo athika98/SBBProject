@@ -1,0 +1,17 @@
+version: '3'
+services:
+  flask:
+    build:
+      context: .
+      dockerfile: Dockerfile_Flask
+    ports:
+      - "5001:5001"
+    restart: always
+
+  svelte:
+    build:
+      context: .
+      dockerfile: Dockerfile_Svelte
+    ports:
+      - "4173:4173"
+    restart: always

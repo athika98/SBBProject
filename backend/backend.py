@@ -36,4 +36,4 @@ def predict():
         return jsonify({'error': 'Fehlende Daten: PLZ und Einwohnerzahl sind erforderlich.'}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port='5001')

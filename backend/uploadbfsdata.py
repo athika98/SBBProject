@@ -12,7 +12,7 @@ MONGODB_DB_NAME = os.getenv('MONGODB_DB_NAME')
 MONGODB_COLLECTION_NAME = 'bfsdaten'
 
 # CSV-Dateipfad
-csv_file_path = '01_getbfsdata/BFS_Stats_bereinigt.csv'
+csv_file_path = 'getbfsdata/BFS_Stats_bereinigt.csv'
 
 # Verbindung zu Cosmos DB herstellen
 client = MongoClient(MONGODB_URI)
